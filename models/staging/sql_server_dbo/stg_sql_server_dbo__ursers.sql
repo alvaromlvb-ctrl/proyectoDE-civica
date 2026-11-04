@@ -1,5 +1,5 @@
 -- =============================================================================
--- stg_sql_server_dbo__addresses
+-- stg_sql_server_dbo__users
 -- =============================================================================
 -- Capa Staging: relación 1:1 con la tabla de Bronze. Solo renombrado y casteado.
 -- Aquí no se filtra ni se deduplica: los borrados lógicos se exponen como
@@ -22,7 +22,6 @@ renamed as (
         , updated_at
         , coalesce(_fivetran_deleted, false) AS is_deleted
         , _fivetran_synced                   AS date_load
-        , _loaded_at
     from source
 )
 
