@@ -3,6 +3,8 @@
 -- =============================================================================
 -- Capa Silver: elimina borrados lógicos y deduplica por clave de negocio,
 -- quedándose con la versión más reciente según date_load.
+-- Limpieza adicional: el email se normaliza a minúsculas y sin espacios en
+-- los extremos, para que los cruces y la validación de formato sean fiables.
 -- =============================================================================
 
 with users as (
@@ -14,12 +16,11 @@ cleaned as (
           user_id
         , first_name
         , last_name
-        , email
+        , lower(trim(email))                      as email
         , phone_number
         , address_id
-        , created_at
-        , updated_at
-        , is_deleted
+        , created_at_utc
+        , updated_at_utc
         , date_load
     from users
     where not is_deleted
