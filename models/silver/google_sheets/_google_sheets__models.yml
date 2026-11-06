@@ -22,3 +22,6 @@ models:
               arguments:
                 min_value: 0
                 inclusive: false
+      - name: quantity_budgeted
+        data_tests:
+          - positive_values
