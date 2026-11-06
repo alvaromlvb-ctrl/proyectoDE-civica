@@ -141,6 +141,8 @@ models:
                 field: user_id
               config:
                 store_failures: true
+      - name: events_sin_id
+        description: Tabla de events sin la columna event_id
 
 unit_tests:
   - name: test_dim_products_categoriza_stock
