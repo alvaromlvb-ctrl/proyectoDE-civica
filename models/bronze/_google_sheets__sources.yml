@@ -10,3 +10,10 @@ sources:
           - name: _row
             data_tests:
               - not_null
+              - unique
+          - name: product_id
+            data_tests:
+              - relationships:
+                  arguments:
+                    to: ref('products')
+                    field: product_id
