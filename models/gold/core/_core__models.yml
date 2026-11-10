@@ -155,6 +155,6 @@ unit_tests:
           - {product_id: 3, inventory_units: 100}
     expect:
       rows:
-        - {product_id: 1, inventory_units: 0, stock_status: out of stock}
-        - {product_id: 2, inventory_units: 5, stock_status: low stock}
-        - {product_id: 3, inventory_units: 100, stock_status: in stock}
+        - {product_id: 1, inventory_units: 0, stock_status: out_of_stock}
+        - {product_id: 2, inventory_units: 5, stock_status: low_stock}
+        - {product_id: 3, inventory_units: 100, stock_status: in_stock}
