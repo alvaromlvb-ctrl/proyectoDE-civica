@@ -21,9 +21,9 @@ order_metrics as (
     select
           user_id
         , count(distinct order_id)                  as total_orders
-        , sum(total_order_cost_usd)                 as total_spent_usd
+        , sum(total_total_order_cost_usd)                 as total_spent_usd
         , sum(discount_usd)                         as total_discount_usd
-        , sum(net_order_cost_usd)                   as total_net_spent_usd
+        , sum(net_total_order_cost_usd)                   as total_net_spent_usd
         , min(order_created_at_utc)                 as first_order_at_utc
         , max(order_created_at_utc)                 as last_order_at_utc
     from orders
