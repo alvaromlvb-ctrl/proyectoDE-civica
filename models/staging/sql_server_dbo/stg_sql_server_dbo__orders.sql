@@ -22,8 +22,8 @@ renamed as (
         , tracking_id
         , shipping_service
         , shipping_cost                            as shipping_cost_usd
-        , order_cost                               as item_order_cost_usd
-        , order_total                              as total_order_cost_usd
+        , order_cost                               as item_total_order_cost_usd
+        , order_total                              as total_total_order_cost_usd
         , status                                   as order_status
         , coalesce(_fivetran_deleted, false)       as is_deleted
         , _fivetran_synced                         as date_load

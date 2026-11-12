@@ -35,8 +35,8 @@ final as (
         , o.estimated_delivery_at_utc
         , o.delivered_at_utc
         , o.shipping_cost_usd
-        , o.order_cost_usd
-        , o.order_total_usd
+        , o.item_total_order_cost_usd
+        , o.total_total_order_cost_usd
         , o.date_load
     from orders o
     left join addresses a on o.address_id = a.address_id

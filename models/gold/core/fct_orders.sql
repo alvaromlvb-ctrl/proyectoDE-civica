@@ -2,7 +2,7 @@
 -- fct_orders
 -- =============================================================================
 -- Hechos de pedidos. Grano: una fila por pedido.
--- net_order_cost_usd = total_order_cost_usd - descuento de la promoción.
+-- net_total_order_cost_usd = total_total_order_cost_usd - descuento de la promoción.
 -- =============================================================================
 
 with orders as (
@@ -25,10 +25,9 @@ final as (
         , delivered_at_utc
         , datediff('day', created_at_utc, delivered_at_utc) as days_to_deliver
         , shipping_cost_usd
-        , order_cost_usd
-        , order_total_usd                           as total_order_cost_usd
+        , total_total_order_cost_usd                          as total_total_order_cost_usd
         , discount_usd
-        , order_total_usd - discount_usd            as net_order_cost_usd
+        , total_total_order_cost_usd - discount_usd            as net_total_order_cost_usd
         , date_load
     from orders
 )

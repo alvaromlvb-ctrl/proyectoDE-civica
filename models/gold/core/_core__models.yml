@@ -145,8 +145,8 @@ models:
                 field: user_id
       - name: order_status
         description: '{{ doc("order_status") }}'
-      - name: net_order_cost_usd
-        description: total_order_cost_usd menos el descuento de la promoción.
+      - name: net_total_order_cost_usd
+        description: total_total_order_cost_usd menos el descuento de la promoción.
 
   - name: fct_order_items
     description: Hechos de líneas de pedido. Grano (order_id, product_id).
