@@ -29,7 +29,6 @@ final as (
         , discount_usd
         , total_total_order_cost_usd - discount_usd            as net_total_order_cost_usd
         , date_load
-        , prueba
     from orders
 )
 
