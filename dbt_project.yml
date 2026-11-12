@@ -69,24 +69,44 @@ models:
       +tags: ['gold']
       +materialized: table
       +database: "{{ env_var('DBT_GOLD_DB') }}"
+
       intermediate:
         +materialized: view
         +schema: intermediate
+        +access: protected
+
+        int_orders__enriched:
+          +group: core
+        
+        int_events__pivoted_by_session:
+          +group: product
+
+        int_order_items__priced:
+          +group: core
+
       core:
         +tags: ['core']
         +schema: core
         +meta:
           owner: equipo-datos-core
+        +group: core
+        +access: public
+
       marketing:
         +tags: ['marketing']
         +schema: marketing
         +meta:
           owner: equipo-marketing-analytics
+        +group: marketing
+        +access: public
+
       product:
         +tags: ['product']
         +schema: product
         +meta:
           owner: equipo-producto
+        +group: product
+        +access: public
 
 # =============================================================================
 # Seeds
